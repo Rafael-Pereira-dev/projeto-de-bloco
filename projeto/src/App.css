@@ -1,0 +1,161 @@
+:root {
+  --background-color-light: #ffffff;
+  --background-color-dark: #121212;
+  --text-color-light: #000000;
+  --text-color-dark: #ffffff;
+  --header-bg-light: #f5f5f5;
+  --header-bg-dark: #1f1f1f;
+  --button-bg-light: #6200ea;
+  --button-bg-dark: #bb86fc;
+}
+
+[data-theme="light"] {
+  --background-color: var(--background-color-light);
+  --text-color: var(--text-color-light);
+  --header-bg: var(--header-bg-light);
+  --button-bg: var(--button-bg-light);
+}
+
+[data-theme="dark"] {
+  --background-color: var(--background-color-dark);
+  --text-color: var(--text-color-dark);
+  --header-bg: var(--header-bg-dark);
+  --button-bg: var(--button-bg-dark);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  text-align: center;
+  padding: 10px;
+}
+
+.header {
+  background-color: var(--header-bg);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+}
+
+.pesquisa-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.pesquisa-form input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px 4px 0 0;
+  width: 100%;
+}
+
+.pesquisa-form button {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  background-color: var(--button-bg);
+  color: white;
+  cursor: pointer;
+  border-radius: 0 0 4px 4px;
+  width: 100%;
+}
+
+.tema-toggle {
+  background-color: var(--button-bg);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.filmes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.filme-card {
+  background-color: var(--header-bg);
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.filme-card img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .pesquisa-form {
+    flex-direction: row;
+    max-width: 400px;
+  }
+
+  .pesquisa-form input {
+    border-radius: 4px 0 0 4px;
+    width: 75%;
+  }
+
+  .pesquisa-form button {
+    width: 25%;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .tema-toggle {
+    max-width: 150px;
+    margin-top: 0;
+  }
+
+  .filmes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    padding: 20px;
+  }
+
+  .header h1 {
+    font-size: 2.5rem;
+  }
+
+  .pesquisa-form {
+    max-width: 600px;
+  }
+
+  .filmes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
